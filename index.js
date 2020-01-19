@@ -9,25 +9,32 @@ var operand2 = parseFloat(arguments[1]);
 
 var operator = arguments[2];
 
-console.log('Calculating:', operand1, operand2, operator);
+const operators = ["+","-","*","/"];
 
-var result;
+if(!isNaN(operand1) && !isNaN(operand2) && operators.includes(operator)) {
 
-switch (operator) {
-  case '+':
-    result = operand1 + operand2;
-    break;
-  case '-':
-    result = operand1 - operand2;
-    break;
-  case '/':
-    result = operand1 / operand2;
-    break;
-  case '*':
-    result = operand1 * operand2;
-    break;
-  default:
-    console.error('Not implemented:', operator);
+  console.log('Calculating:', operand1, operand2, operator);
+
+  var result;
+
+  switch (operator) {
+    case '+':
+      result = operand1 + operand2;
+      break;
+    case '-':
+      result = operand1 - operand2;
+      break;
+    case '/':
+      result = operand1 / operand2;
+      break;
+    case '*':
+      result = operand1 * operand2;
+      break;
+    default:
+      console.error('Not implemented:', operator);
+  }
+
+  console.log('Result:', result);
+}else {
+  console.log("please use correct syntax ( number number operator)");
 }
-
-console.log('Result:', result);
